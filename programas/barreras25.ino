@@ -12,7 +12,7 @@
 // =======================
 
 // WiFi
-const char* ssid     = "iPhone de jorge";
+const char* ssid     = "RedeTecno";
 const char* password = "tecnoloxia";
 
 // MQTT
