@@ -10,7 +10,7 @@ Programa para conectar ESP32 a node-red a través de MQTT
 #include <Wire.h>                 // Comunicación I2C
 #include <LiquidCrystal_I2C.h>    // Control de LCD I2C
 #include "xht11.h"                // Sensor DHT11 (personalizado)
-#include <ESP32servo.h>          // Servomotor
+#include <ESP32Servo.h>          // Servomotor
 
 // =======================
 //     DEFINICIONES
