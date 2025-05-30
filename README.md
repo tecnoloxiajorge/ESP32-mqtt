@@ -10,6 +10,7 @@ Programa para conectar ESP32 a node-red a través de MQTT
 #include <Wire.h>                 // Comunicación I2C
 #include <LiquidCrystal_I2C.h>    // Control de LCD I2C
 #include "xht11.h"                // Sensor DHT11 (personalizado)
+#include <ESP32servo.h>          // Servomotor
 
 // =======================
 //     DEFINICIONES
@@ -25,11 +26,16 @@ const char* password = "tecnoloxia";
 // Cambiar en cada grupo!!!
 #define TOPIC_TEMPERATURA "barrera1/sensores/temperatura"
 #define TOPIC_HUMEDAD     "barrera1/sensores/humedad"
+#define TOPIC_LDR          "barrera1/sensores/ldr"
 #define TOPIC_DEPURACION  "depuracion"
 #define TOPIC_PANTALLA    "barrera1/actuadores/pantalla"
+#define TOPIC_FECHA    "barrera1/actuadores/fecha"
+#define TOPIC_HORA    "barrera1/actuadores/hora"
 
 // Pines de los sensores y actuadores
 #define DHT_PIN 17
+#define TRIG_PIN 13
+#define ECHO_PIN 12
 
 // Tiempo de muestreo dht11 (60 segundos)
 #define INTERVALO_DHT11 60000
@@ -62,6 +68,9 @@ void setup() {
   conectarWiFi();
   client.setServer(MQTT_SERVER, 1883);
   client.setCallback(callback);
+
+pinMode(TRIG_PIN, INPUT);
+pinMode(ECHO_PIN, OUTPUT);
 }
 
 // =======================
