@@ -23,7 +23,7 @@ const char* password = "tecnoloxia";
 // MQTT
 #define MQTT_SERVER      "172.20.10.3"
 
-// Cambiar en cada grupo!!!
+// TOPICOS MQTT
 #define TOPIC_TEMPERATURA "barrera1/sensores/temperatura"
 #define TOPIC_HUMEDAD     "barrera1/sensores/humedad"
 #define TOPIC_LDR          "barrera1/sensores/ldr"
@@ -36,9 +36,16 @@ const char* password = "tecnoloxia";
 #define DHT_PIN 17
 #define TRIG_PIN 13
 #define ECHO_PIN 12
+#define SERVO_PIN 18
+#define LDR_PIN 35
+#define ROJO_PIN 14
+#define ANMARILLO_PIN 27
+#define VERDE_PIN 16
 
-// Tiempo de muestreo dht11 (60 segundos)
-#define INTERVALO_DHT11 60000
+
+// Tiempo de muestreo dht11 y pantalla
+#define INTERVALO_DHT11 60000         // 60 segundos
+#define INTERVALO_PANTALLA 10000     //10 segundos
 
 // =======================
 //     OBJETOS GLOBALES
@@ -69,8 +76,14 @@ void setup() {
   client.setServer(MQTT_SERVER, 1883);
   client.setCallback(callback);
 
-pinMode(TRIG_PIN, INPUT);
-pinMode(ECHO_PIN, OUTPUT);
+  //ultrasonidos
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+  // leds
+  pinMode(ROJO_PIN, OUTPUT);
+  pinMode(AMARILLO_PIN, OUTPUT);
+  pinMode(VERDE_PIN, OUTPUT);
+
 }
 
 // =======================
