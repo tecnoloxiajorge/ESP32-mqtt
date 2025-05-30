@@ -39,7 +39,7 @@ const char* password = "tecnoloxia";
 #define SERVO_PIN 18
 #define LDR_PIN 35
 #define ROJO_PIN 14
-#define ANMARILLO_PIN 27
+#define AMARILLO_PIN 27
 #define VERDE_PIN 16
 
 
