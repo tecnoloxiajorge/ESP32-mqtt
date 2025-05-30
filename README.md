@@ -55,6 +55,7 @@ LiquidCrystal_I2C mylcd(0x27, 16, 2); // Dirección del LCD, 16 columnas y 2 fil
 xht11 xht(DHT_PIN);
 WiFiClient espCliente;
 PubSubClient client(espCliente);
+Servo barrera;
 
 // =======================
 //     VARIABLES GLOBALES
@@ -83,7 +84,13 @@ void setup() {
   pinMode(ROJO_PIN, OUTPUT);
   pinMode(AMARILLO_PIN, OUTPUT);
   pinMode(VERDE_PIN, OUTPUT);
-
+  // Servo
+	ESP32PWM::allocateTimer(0);
+	ESP32PWM::allocateTimer(1);
+	ESP32PWM::allocateTimer(2);
+	ESP32PWM::allocateTimer(3);
+	barrera.setPeriodHertz(50);    // standard 50 hz servo
+	barrera.attach(SERVO_PIN, 1000, 2000); // attaches the servo on pin 18 to the servo object
 }
 
 // =======================
