@@ -23,7 +23,7 @@ const char* password = "tecnoloxia";
 #define TOPIC_HUMEDAD     "barrera1/sensores/humedad"
 #define TOPIC_DEPURACION  "depuracion"
 #define TOPIC_PANTALLA    "barrera1/actuadores/pantalla"
-
+#define TOPIC_FECHA        "barrera1/actuadores/fecha"
 // Pines de los sensores y actuadores
 #define DHT_PIN 17
 
