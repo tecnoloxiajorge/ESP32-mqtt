@@ -2,5 +2,5 @@
 Programa para conectar ESP32 a node-red a través de MQTT
 ## Instrucciones
 1. instalar librerías: dht11, servo, pantalla
-2. Instaler ESP32 en IDE de Arduino
+2. Instaler ESP32 en IDE de Arduino ( https://dl.espressif.com/dl/package_esp32_index.json )
 
