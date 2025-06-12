@@ -16,7 +16,7 @@ const char* ssid     = "RedeTecno";
 const char* password = "tecnoloxia";
 
 // MQTT
-#define MQTT_SERVER      "172.20.10.3"
+#define MQTT_SERVER      "xxx.xx.xx.xx"
 
 // Cambiar en cada grupo!!!
 #define TOPIC_TEMPERATURA "barrera1/sensores/temperatura"
