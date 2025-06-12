@@ -19,6 +19,7 @@ void reconnect() {
     if (client.connect("ESP32Client")) {
       Serial.println("¡Conectado!");
       client.subscribe(TOPIC_PANTALLA);
+      client.subscribe(TOPIC_FECHA);
     } else {
       Serial.print("Fallo: ");
       Serial.print(client.state());
